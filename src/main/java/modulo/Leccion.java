@@ -4,15 +4,19 @@
  */
 package modulo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author aaron
  */
 public class Leccion 
 {
+    //Definir variables
     private String [] texto;
     private String ejemplos;
     private String titulo;
+    private ArrayList <Ejercicios> ejercicio = new ArrayList<>();
     
     //CCONSTRUCTORES
     public Leccion() {
@@ -37,7 +41,14 @@ public class Leccion
         return titulo;
     }
     
+    public void agregarEjercicio()
+    {
+        
+    }
     
-    
+    public void totalEjercicios()
+    {
+        ejercicio.size();
+    }
     
 }//fin clase Leccion
