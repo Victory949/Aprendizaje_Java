@@ -8,19 +8,17 @@ package modulo;
  *
  * @author aaron
  */
-public abstract class Ejercicios 
+public abstract class Ejercicios extends Elemento
 {
     //Definir variables
-    private String enunciado;
-    private int puntos;
+    private String enunciado,explicación;
     
     //Constructor con parametros
-    public Ejercicios(String enunciado, int puntos) {
+    public Ejercicios(String enunciado, String puntos, int id, String titulo) {
+        super(id, titulo);
         this.enunciado = enunciado;
-        this.puntos = puntos;
+        this.explicación = puntos;
     }
-    
-    //SETS Y GETS
     public String getEnunciado() {
         return enunciado;
     }
@@ -29,13 +27,28 @@ public abstract class Ejercicios
         this.enunciado = enunciado;
     }
 
-    public int getPuntos() {
-        return puntos;
+    public String getExplicación() {
+        return explicación;
     }
 
-    public void setPuntos(int puntos) {
-        this.puntos = puntos;
+    //SETS Y GETS
+    public void setExplicación(String explicación) {
+        this.explicación = explicación;
     }
+
+    //Metodos abstractos
+    public abstract String tipo();
+    
+    public abstract String[] opciones();
+    
+    public abstract String opcionCorrecta();
+    
+    //Metodos
+    @Override
+    public String información() {
+        return super.información()+"\nTipo: "+tipo();
+    }
+
     
     
 }//fin clase Ejercicios
