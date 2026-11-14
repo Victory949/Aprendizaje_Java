@@ -39,7 +39,7 @@ public class Elemento {
     }
     
     //Metodo informativo
-    public String información()
+    public String informacion()
     {
         return "Id: "+getId() + "\nTitulo: "+getTitulo();
     }

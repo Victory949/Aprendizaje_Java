@@ -8,16 +8,16 @@ package modulo;
  *
  * @author aaron
  */
-public abstract class Ejercicios extends Elemento
+public abstract class Ejercicios extends Elemento implements Evaluable
 {
     //Definir variables
-    private String enunciado,explicación;
+    private String enunciado,explicacion;
     
     //Constructor con parametros
     public Ejercicios(String enunciado, String puntos, int id, String titulo) {
         super(id, titulo);
         this.enunciado = enunciado;
-        this.explicación = puntos;
+        this.explicacion = explicacion;
     }
     public String getEnunciado() {
         return enunciado;
@@ -28,12 +28,12 @@ public abstract class Ejercicios extends Elemento
     }
 
     public String getExplicación() {
-        return explicación;
+        return explicacion;
     }
 
     //SETS Y GETS
     public void setExplicación(String explicación) {
-        this.explicación = explicación;
+        this.explicacion = explicación;
     }
 
     //Metodos abstractos
@@ -43,10 +43,20 @@ public abstract class Ejercicios extends Elemento
     
     public abstract String opcionCorrecta();
     
-    //Metodos
+    //Metodos    
     @Override
-    public String información() {
-        return super.información()+"\nTipo: "+tipo();
+    public String correccion(String respuesta)
+    {
+        if(evaluar(respuesta))
+        {
+            return "¡Respuesta correcta!\n"+explicacion;
+        }
+        return "¡Respuests incorrecta!\nLa respuesta correcta era: "+opcionCorrecta()+"\n"+explicacion;
+    }
+    
+    @Override
+    public String informacion() {
+        return super.informacion()+"\nTipo: "+tipo();
     }
 
     
