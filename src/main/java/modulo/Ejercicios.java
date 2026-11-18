@@ -14,7 +14,7 @@ public abstract class Ejercicios extends Elemento implements Evaluable
     private String enunciado,explicacion;
     
     //Constructor con parametros
-    public Ejercicios(String enunciado, String puntos, int id, String titulo) {
+    public Ejercicios(String enunciado, String explicacion, int id, String titulo) {
         super(id, titulo);
         this.enunciado = enunciado;
         this.explicacion = explicacion;

@@ -8,18 +8,19 @@ package modulo;
  *
  * @author aaron
  */
-public class Libro 
+public class Libro extends Elemento
 {
     //Definir variables
     private String titulo;
+    //creación ArrayList
+   
 
     //CONSTRUCTORES
-    public Libro() {
-    }
-
-    public Libro(String titulo) {
+    public Libro(String titulo, int id) {
+        super(id, titulo);
         this.titulo = titulo;
     }
+    
     
     //GETS Y SETS
     public String getTitulo() {
