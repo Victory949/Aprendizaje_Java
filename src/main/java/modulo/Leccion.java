@@ -10,45 +10,49 @@ import java.util.ArrayList;
  *
  * @author aaron
  */
-public class Leccion 
+public class Leccion extends Elemento
 {
     //Definir variables
     private String [] texto;
     private String ejemplos;
-    private String titulo;
     private ArrayList <Ejercicios> ejercicio = new ArrayList<>();
     
-    //CCONSTRUCTORES
-    public Leccion() {
-    }
-
-    public Leccion(String[] texto, String ejemplos, String titulo) {
+    //CONSTRUCTORES
+    public Leccion(String[] texto, String ejemplos, int id, String titulo) {
+        super(id, titulo);
         this.texto = texto;
         this.ejemplos = ejemplos;
-        this.titulo = titulo;
     }
     
     //GETS
-    public String[] getTexto() {
+    public String[] getTexto()
+    {
         return texto;
     }
 
-    public String getEjemplos() {
+    public String getEjemplos()
+    {
         return ejemplos;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-    
-    public void agregarEjercicio()
+    //METODOS
+    public void agregarEjercicio(Ejercicios e)
     {
+        if(e!=null)
+        {
+            ejercicio.add(e);
+        }
         
     }
     
-    public void totalEjercicios()
+    public int totalEjercicios()
     {
-        ejercicio.size();
+        return ejercicio.size();
+    }
+    
+    public Ejercicios getEjercicios(int posicion)
+    {
+        return ejercicio.get(posicion);
     }
     
 }//fin clase Leccion
