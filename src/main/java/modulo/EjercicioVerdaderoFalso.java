@@ -33,7 +33,7 @@ public class EjercicioVerdaderoFalso extends Ejercicios{
 
     @Override
     public String opcionCorrecta() {
-        return "¡La respuesta es "+(rCorrecta ? "verdadera!" : "falsa, te equivocaste!");
+        return rCorrecta ? verdadero : falso;
     }
 
     @Override

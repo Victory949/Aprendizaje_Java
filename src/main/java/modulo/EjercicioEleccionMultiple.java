@@ -22,7 +22,7 @@ public class EjercicioEleccionMultiple extends Ejercicios{
     
     @Override
     public String tipo() {
-        return "MULTIPLE";
+        return "Elección Multiple";
     }
 
     @Override
@@ -33,7 +33,7 @@ public class EjercicioEleccionMultiple extends Ejercicios{
 
     @Override
     public String opcionCorrecta() {
-        return "¡La respuesta era "+ opciones[rCorrecta] +"!";
+        return opciones[rCorrecta];
     }
 
     @Override

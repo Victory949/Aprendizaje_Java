@@ -27,13 +27,13 @@ public abstract class Ejercicios extends Elemento implements Evaluable
         this.enunciado = enunciado;
     }
 
-    public String getExplicación() {
+    public String getExplicacion() {
         return explicacion;
     }
 
     //SETS Y GETS
-    public void setExplicación(String explicación) {
-        this.explicacion = explicación;
+    public void setExplicacion(String explicacion) {
+        this.explicacion = explicacion;
     }
 
     //Metodos abstractos
@@ -51,7 +51,7 @@ public abstract class Ejercicios extends Elemento implements Evaluable
         {
             return "¡Respuesta correcta!\n"+explicacion;
         }
-        return "¡Respuests incorrecta!\nLa respuesta correcta era: "+opcionCorrecta()+"\n"+explicacion;
+        return "¡Respuesta incorrecta!\nLa respuesta correcta era: "+opcionCorrecta()+"\n"+explicacion;
     }
     
     @Override

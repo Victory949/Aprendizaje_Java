@@ -36,7 +36,12 @@ public class EjercicioCompletar extends Ejercicios{
 
     @Override
     public boolean evaluar(String respuesta) {
-
+        
+        if(respuesta==null)
+        {
+            return false;
+        }
+        
         for(int i=0; i<respuestaAceptada.length;i++)
         {
             if(respuesta.trim().equals(respuestaAceptada[i]))
