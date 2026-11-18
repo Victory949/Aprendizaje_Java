@@ -4,31 +4,52 @@
  */
 package modulo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author aaron
  */
 public class Libro extends Elemento
 {
-    //Definir variables
-    private String titulo;
     //creación ArrayList
+    private ArrayList<Leccion> lecciones = new ArrayList<>();
    
 
     //CONSTRUCTORES
-    public Libro(String titulo, int id) {
+    public Libro(int id, String titulo) {
         super(id, titulo);
-        this.titulo = titulo;
     }
     
+    //METODOS
+    public void agregarLeccion(Leccion lec)
+    {
+        if(lec!=null)
+        {
+            lecciones.add(lec);
+        }
+    }
     
-    //GETS Y SETS
-    public String getTitulo() {
-        return titulo;
+    public int totalLecciones()
+    {
+        return lecciones.size();
     }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    
+    public Leccion getLeccion(int posicion)
+    {
+        return lecciones.get(posicion);
     }
+    
+    public int totalEjerciciosLibro()
+    {
+        int total=0;
+        for(int i=0; i<lecciones.size();i++)
+        {
+            total+= lecciones.get(i).totalEjercicios();
+        }
+        
+        return total;
+    }
+    
     
 }//fin clase Libro
