@@ -13,13 +13,21 @@ import java.util.ArrayList;
 public class Libro extends Elemento
 {
     //creación ArrayList
+    private String explicacion;
     private ArrayList<Leccion> lecciones = new ArrayList<>();
    
 
     //CONSTRUCTORES
-    public Libro(int id, String titulo) {
+    public Libro(int id, String titulo, String explicacion) {
         super(id, titulo);
+        this.explicacion = explicacion;
     }
+    
+    //GET
+    public String getExplicacion() {
+        return explicacion;
+    }
+    
     
     //METODOS
     public void agregarLeccion(Leccion lec)

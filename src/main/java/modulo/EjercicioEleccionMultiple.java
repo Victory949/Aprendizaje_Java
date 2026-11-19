@@ -14,7 +14,7 @@ public class EjercicioEleccionMultiple extends Ejercicios{
     private String[] opciones;
     private int rCorrecta;
 
-    public EjercicioEleccionMultiple(String[] opciones, int rCorrecta, String enunciado, String explicacion, int id, String titulo) {
+    public EjercicioEleccionMultiple(int id, String titulo,String enunciado,String[] opciones, int rCorrecta, String explicacion) {
         super(enunciado, explicacion, id, titulo);
         this.opciones = opciones;
         this.rCorrecta = rCorrecta;
