@@ -13,7 +13,7 @@ public class EjercicioCompletar extends Ejercicios{
     //definir variables
     private String[] respuestaAceptada;
 
-    public EjercicioCompletar(String[] respuestaAceptada, String enunciado, String explicacion, int id, String titulo) {
+    public EjercicioCompletar(int id, String titulo, String enunciado, String[] respuestaAceptada, String explicacion) {
         super(enunciado, explicacion, id, titulo);
         this.respuestaAceptada = respuestaAceptada;
     }

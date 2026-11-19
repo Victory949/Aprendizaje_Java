@@ -14,7 +14,7 @@ public class EjercicioVerdaderoFalso extends Ejercicios{
     private String verdadero,falso;
     private boolean rCorrecta;
 
-    public EjercicioVerdaderoFalso(String verdadero, String falso, boolean rCorrecta, String enunciado, String explicacion, int id, String titulo) {
+    public EjercicioVerdaderoFalso(int id, String titulo, String enunciado, String verdadero, String falso, boolean rCorrecta,String explicacion) {
         super(enunciado, explicacion, id, titulo);
         this.verdadero = verdadero;
         this.falso = falso;
