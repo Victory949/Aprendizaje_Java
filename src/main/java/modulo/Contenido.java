@@ -28,8 +28,8 @@ public class Contenido {
     public Leccion crearCapitulo1()
     {
         Leccion l = new Leccion(new String[]{
-                       "Objetivo: comprender él como un programa decide si ejecuta o no un bloque de código.",
-                       "La estructura if ejecuta un bloque solo cuando una condicion es verdadera"
+                       "Objetivo: comprender él cómo un programa decide si ejecuta o no un bloque de código.",
+                       "La estructura if ejecuta un bloque solo cuando una condición es verdadera"
                        + "Java evalua la condicion entre parentesis y, si es true,\n ejecuta las instrucciones dentro de las llaves."},
                        "int edad = 20;\n"
                        +"if (edad >= 18)\n"
@@ -114,7 +114,7 @@ public class Contenido {
     public Leccion crearCapitulo2()
     {
         Leccion l= new Leccion(new String[]{
-        "Objetivo: comprender él como un programa decide ejecuta un comando dependiendo de si una condición es verdadera o falsa.",
+        "Objetivo: comprender él cómo un programa decide ejecuta un comando dependiendo de si una condición es verdadera o falsa.",
         "La estructura if-else ofrece dos caminos: uno si la condicion es verdadera(if) y otro si es falsa(else)"},
         "int edad = 15;\n"
         +"if (edad >=18)\n"
@@ -154,7 +154,7 @@ public class Contenido {
                 "¿En una estructura if-else se pueden agregar condiciones usando el else if?\n\n", //enunciado
                 "Verdadero","Falso",
                 true,
-                "Es verdadero, se puede ejecutar de la siguiente manera:"
+                "Es verdadero, se puede ejecutar de la siguiente manera:\n\n"
                         + "if(notas >= 70){"
                         + "  \nSystem.out.println(\"APROBADO\");   "
                         + "\n}else if(notas >= 65){"
@@ -174,20 +174,20 @@ public class Contenido {
                         + "\n   System.out.println(\"Menor de edad\");"
                         + "\n}", //enunciado
                 new String[]{"Mayor de edad", "Menor de edad", "Ambos"},0, //opciones & rCorrecta
-                "La condición es verdadera, así que Java no tiene que saltar a else, e imprime \"Menor\".")); //explicacion
+                "La condición es verdadera, así que Java no tiene que saltar a else, e imprime \"Mayor de edad\".")); //explicacion
        
         l.agregarEjercicio(new EjercicioVerdaderoFalso(
                 805, //id
                 "Verdadero o Falso", //titulo
                 "Respecto al siguiente código:\n\n"
                         + "int notas = 67;"
-                        + "if(notas >= 70){"
+                        + "\nif(notas >= 70){"
                         + "  \nSystem.out.println(\"APROBADO\");   "
                         + "\n}else if(notas >= 65){"
                         + "     \nSystem.out.println(\"AMPLIACIÓN\");"
                         + "\n}else{"
                         + "     \nSystem.out.println(\"REPROBADO\");"
-                        + "\n}"
+                        + "\n}\n\n"
                         + "¿Se imprimirá \"REPROBADO\"?", //enunciado
                 "Verdadero","Falso",
                 false,
@@ -198,8 +198,8 @@ public class Contenido {
     public Leccion crearCapitulo3()
     {
         Leccion l = new Leccion(new String[]{
-            "Objetivo: comprender como se ejecuta un comando dependiendo de diferentes casos",
-            "La estructura switch compara una variable contra varios casos y ejecuta el que coindice"
+            "Objetivo: comprender cómo se ejecuta un comando dependiendo de diferentes casos",
+            "La estructura switch compara una variable contra varios casos y ejecuta el que coincide"
                + "\npara evitar respuestas que no aparecen, se usa el default"},
             "int dia = 3;\n"
            +"switch (dia)\n"
@@ -241,7 +241,7 @@ public class Contenido {
                 "En una estructura switch, ¿se debe de escribir los cases dentro de las llaves del switch?", //enunciado
                 "Verdadero","Falso",
                 true,
-                "Es verdadero, en código se vería de está manera:\n\n"
+                "Es verdadero, en código se vería de esta manera:\n\n"
                         + "int opc;"
                         + "\nswitch(opc){"
                         + "\ncase 1:"
@@ -251,14 +251,14 @@ public class Contenido {
                         + "\n   //Lo que necesite el case 2"
                         + "\n   break;"
                         + "\ndefault:"
-                        + "     //Mensaje opcional"
+                        + "     \n//Mensaje opcional"
                         + "\n}"));
         
         l.agregarEjercicio(new EjercicioEleccionMultiple(
                 704, //id
                 "Elección Multiple", //titulo
                 "¿Qué imprime el siguiente código?\n\n"
-                        + "int x = 3\n"
+                        + "int x = 3;\n"
                         + "/*switch(x){\n"
                         + "case 1:\n"
                         + "     System.out.println(\"Lunes\");"
@@ -271,7 +271,7 @@ public class Contenido {
                         + "break;\n"
                         + "}*/\n", //enunciado
                 new String[]{"Miercoles", "Martes", "No imprime nada"},2, //opciones & rCorrecta
-                "La estructura switch se encarga de ejecutar distintos bloques dependiendo del valor que se le encargue.")); //explicacion
+                "El switch está entre comentarios, sino fuera así la respuesta sería \"Miercoles\".")); //explicacion
 
         l.agregarEjercicio(new EjercicioCompletar(
                 705, //id
