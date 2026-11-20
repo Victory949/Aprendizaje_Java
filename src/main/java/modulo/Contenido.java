@@ -136,8 +136,62 @@ public class Contenido {
                 "La estrucuctura if-else ofrece un camino si la condición se cumple o no." //explicacion
         ));
         
-        1
+        l.agregarEjercicio(new EjercicioCompletar(
+                802, //id
+                "Complete el código", // titulo
+                "Que palabra clave falta en el siguiente codigo:\n\n"
+                        + "if(nota>=70){"
+                        + "     \nSystem.out.println(\"APROBADO\");}"
+                        + "\n_________{"
+                        + "\n\nSystem.out.println(\"REPROBADO\");}", //enunciado
+                    new String[]{"else"}, //respuestaAceptada
+                "Else es la palabra clave para insertar el resultado en caso de que la condición no se cumpla" //explicacion
+        ));
         
+       l.agregarEjercicio(new EjercicioVerdaderoFalso(
+                803, //id
+                "Verdadero o Falso", //titulo
+                "¿En una estructura if-else se pueden agregar condiciones usando el else if?\n\n", //enunciado
+                "Verdadero","Falso",
+                true,
+                "Es verdadero, se puede ejecutar de la siguiente manera:"
+                        + "if(notas >= 70){"
+                        + "  \nSystem.out.println(\"APROBADO\");   "
+                        + "\n}else if(notas >= 65){"
+                        + "     \nSystem.out.println(\"AMPLIACIÓN\");"
+                        + "\n}else{"
+                        + "     \nSystem.out.println(\"REPROBADO\");"
+                        + "\n}"));
+       
+       l.agregarEjercicio(new EjercicioEleccionMultiple(
+                804, //id
+                "Elección Multiple", //titulo
+                "¿Que imprime este código?"
+                        + "\n\nint edad =25;"
+                        + "\nif (edad>=18){\n"
+                        + "     System.out.println(\"Mayor de edad\");"
+                        + "\n}else{"
+                        + "\n   System.out.println(\"Menor de edad\");"
+                        + "\n}", //enunciado
+                new String[]{"Mayor de edad", "Menor de edad", "Ambos"},0, //opciones & rCorrecta
+                "La condición es verdadera, así que Java no tiene que saltar a else, e imprime \"Menor\".")); //explicacion
+       
+        l.agregarEjercicio(new EjercicioVerdaderoFalso(
+                805, //id
+                "Verdadero o Falso", //titulo
+                "Respecto al siguiente código:\n\n"
+                        + "int notas = 67;"
+                        + "if(notas >= 70){"
+                        + "  \nSystem.out.println(\"APROBADO\");   "
+                        + "\n}else if(notas >= 65){"
+                        + "     \nSystem.out.println(\"AMPLIACIÓN\");"
+                        + "\n}else{"
+                        + "     \nSystem.out.println(\"REPROBADO\");"
+                        + "\n}"
+                        + "¿Se imprimirá \"REPROBADO\"?", //enunciado
+                "Verdadero","Falso",
+                false,
+                "Es falso, ya que al notas ser 67 este entra en el rango de \"AMPLIACIÓN\"."));
         return l;
     }
     
@@ -164,7 +218,78 @@ public class Contenido {
            + "}\n",
            3,"Estructura switch");
         
+        
+        //EJERCICIOS
+        l.agregarEjercicio(new EjercicioVerdaderoFalso(
+                701, //id
+                "Verdadero o Falso", //titulo
+                "¿Es estrictamente necesario usar un \"break\" luego de un \"default\"?", //enunciado
+                "Verdadero","Falso",
+                false,
+                "Es falso, ya que \"default\" puede utilizarse independientemente de tener o no un \"break\" luego."));
+        
+        l.agregarEjercicio(new EjercicioEleccionMultiple(
+                702, //id
+                "Elección Multiple", //titulo
+                "¿Cuál es la función de una estructura switch en Java?", //enunciado
+                new String[]{"Declarar variables con distintos datos", "Evaluar booleanos", "Ejecutar distintos bloques dependiendo el valor de una expresión"},2, //opciones & rCorrecta
+                "La estructura switch se encarga de ejecutar distintos bloques dependiendo del valor que se le encargue.")); //explicacion
+        
+        l.agregarEjercicio(new EjercicioVerdaderoFalso(
+                703, //id
+                "Verdadero o Falso", //titulo
+                "En una estructura switch, ¿se debe de escribir los cases dentro de las llaves del switch?", //enunciado
+                "Verdadero","Falso",
+                true,
+                "Es verdadero, en código se vería de está manera:\n\n"
+                        + "int opc;"
+                        + "\nswitch(opc){"
+                        + "\ncase 1:"
+                        + "\n   //Lo que necesite el case 1"
+                        + "\n   break;"
+                        + "\ncase 2:"
+                        + "\n   //Lo que necesite el case 2"
+                        + "\n   break;"
+                        + "\ndefault:"
+                        + "     //Mensaje opcional"
+                        + "\n}"));
+        
+        l.agregarEjercicio(new EjercicioEleccionMultiple(
+                704, //id
+                "Elección Multiple", //titulo
+                "¿Qué imprime el siguiente código?\n\n"
+                        + "int x = 3\n"
+                        + "/*switch(x){\n"
+                        + "case 1:\n"
+                        + "     System.out.println(\"Lunes\");"
+                        + "break;\n"
+                        + "case 2:\n"
+                        + "     System.out.println(\"Martes\");\n"
+                        + "break;\n"
+                        + "case 3:\n"
+                        + "     System.out.println(\"Miercoles\");\n"
+                        + "break;\n"
+                        + "}*/\n", //enunciado
+                new String[]{"Miercoles", "Martes", "No imprime nada"},2, //opciones & rCorrecta
+                "La estructura switch se encarga de ejecutar distintos bloques dependiendo del valor que se le encargue.")); //explicacion
+
+        l.agregarEjercicio(new EjercicioCompletar(
+                705, //id
+                "Complete el código", // titulo
+                "Que palabra clave falta en el siguiente codigo:\n\n"
+                        + "\nswitch(eleccion){"
+                        + "\ncase 1:"
+                        + "\n   System.out.println(\"Hoy es LUNES\");"
+                        + "\n   _____________;"
+                        + "\n..."
+                        + "\n}", //enunciado
+                    new String[]{"break","break;"}, //respuestaAceptada
+                "La palabra clave es BREAK, usada luego de cada case. Es lo que evite el \"fall-through\"." //explicacion
+        ));
+
+
         return l;
+       
     }
     
 }
