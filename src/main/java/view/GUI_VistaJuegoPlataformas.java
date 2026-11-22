@@ -4,12 +4,22 @@
  */
 package view;
 
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import model.*;
+import static model.Bloque.bloqueIf;
+import static model.Bloque.bloqueIfElse;
 
 /**
  *
@@ -72,6 +82,7 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
         lblPlataforma4 = new javax.swing.JLabel();
         lblPlataforma5 = new javax.swing.JLabel();
         lblPlataforma6 = new javax.swing.JLabel();
+        lblMensaje = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -196,6 +207,9 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
         lblPlataforma6.setOpaque(true);
         pnlBack.add(lblPlataforma6, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 131, 147, 18));
 
+        lblMensaje.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        pnlBack.add(lblMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 440, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -229,6 +243,7 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
     private javax.swing.JLabel lblBloqueSwitch1;
     private javax.swing.JLabel lblBloqueSwitch2;
     private javax.swing.JLabel lblIndicaciones;
+    private javax.swing.JLabel lblMensaje;
     private javax.swing.JLabel lblPersonaje;
     private javax.swing.JLabel lblPlataforma1;
     private javax.swing.JLabel lblPlataforma2;
@@ -276,56 +291,116 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
             try
             {
                 BufferedImage original = ImageIO.read(getClass().getResourceAsStream(ruta));
-            }
-        }
-        return null;
-    }
-}
-/*
-private ImageIcon[][] cargarAnimacion(String prefijo, int desde, int hasta, double escala) {
-        int n = hasta - desde + 1;
-        ImageIcon[][] frames = new ImageIcon[2][n];
-        for (int i = 0; i < n; i++) {
-            String ruta = String.format("/images/%s%02d.png", prefijo, desde + i);
-            try {
-                BufferedImage original = ImageIO.read(getClass().getResourceAsStream(ruta));
-                int w = Math.max(1, (int) Math.round(original.getWidth() * escala));
-                int h = Math.max(1, (int) Math.round(original.getHeight() * escala));
+                int w = Math.max(1, (int) Math.round(original.getWidth()*escala));
+                int h = Math.max(1, (int) Math.round(original.getHeight()*escala));
                 Image reducida = original.getScaledInstance(w, h, Image.SCALE_SMOOTH);
-                BufferedImage derecha = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+                BufferedImage derecha = new BufferedImage(w,h, BufferedImage.TYPE_INT_ARGB);
                 derecha.getGraphics().drawImage(reducida, 0, 0, null);
-
-                AffineTransform espejo = AffineTransform.getScaleInstance(-1, 1);
+                
+                AffineTransform espejo = AffineTransform.getScaleInstance(-1, -1);
                 espejo.translate(-w, 0);
-                BufferedImage izquierda = new AffineTransformOp(espejo,
-                        AffineTransformOp.TYPE_BILINEAR).filter(derecha, null);
-
+                
+                BufferedImage izquierda = new AffineTransformOp(espejo,AffineTransformOp.TYPE_BILINEAR).filter(derecha,null);
+                
                 frames[0][i] = new ImageIcon(derecha);
                 frames[1][i] = new ImageIcon(izquierda);
-            } catch (IOException | IllegalArgumentException e) {
-                throw new IllegalStateException("No se pudo cargar la imagen " + ruta, e);
+            } catch(IOException | IllegalArgumentException e)
+            {
+                throw new IllegalStateException("No cargo la imagen"+ruta,e);
             }
         }
         return frames;
     }
-
-    private ImageIcon elegirSprite(Jugador j) {
-        int lado = j.getDireccion() >= 0 ? 0 : 1;
-        int t = j.getTicksAnimacion();
-
-        if (!j.isEnSuelo()) {
-            ImageIcon[][] anim = j.isAcrobatico() ? acrobatico : salto;
-            int n = anim[lado].length;
-            int frame = Math.min(n - 1, j.getTicksEnAire() * n / 40);
-            return anim[lado][frame];
+    
+    public ImageIcon elegirSprite(Jugador j)
+    {
+        int lado = j.getDireccion()>= 0 ? 0:1;
+        int t= j.getTicksAnimacion();
+        
+        if(!j.isEnSuelo())
+        {
+            ImageIcon[][] a = j.isAcrobatico() ? acrobatico : salto;
+            int n= a[lado].length;
+            int frame = Math.min(n-1, j.getTicksEnAire()*n/40);
+            return a[lado][frame];
         }
-        if (j.isAgachado()) {
-            int frame = j.getVx() != 0 ? (t / 6) % agachado[lado].length : 0;
+        
+        if(!j.isAgachado())
+        {
+            int frame = j.getVelocidadX()!=0 ? (t/6) % agachado[lado].length:0;
             return agachado[lado][frame];
         }
-        if (j.getVx() != 0) {
-            return correr[lado][(t / 4) % correr[lado].length];
+        
+        if(j.getVelocidadX()!=0)
+        {
+            return correr[lado][(t/4) % correr[lado].length];
         }
         return quieto[lado][0];
     }
-*/
+    
+    //ESCENAS
+    public void construirEscena(Juego game)
+    {
+        ArrayList<Rectangle> plataformas = game.getPlataformas();
+        for(int i = 0; i <plataformas.size(); i++)
+        {
+            lblPlataformas[i].setBounds(plataformas.get(i));
+        }
+        
+        ArrayList<CuadroDefinicion> zonas = game.getZonas();
+        for(int i = 0; i <zonas.size(); i++)
+        {
+            CuadroDefinicion z = zonas.get(i);
+            lblZonas[i].setBounds(z.getX(),z.getY(),CuadroDefinicion.ancho,CuadroDefinicion.alto);
+        }
+        
+        actualizar(game);
+    }
+    
+    public void actualizar(Juego game)
+    {
+        Jugador j = game.getPlayer();
+        
+        ImageIcon sprite = elegirSprite(j);
+        lblPersonaje.setIcon(sprite);
+        int w = sprite.getIconWidth();
+        int h = sprite.getIconHeight();
+        lblPersonaje.setBounds(j.getX()+Jugador.ancho/2-w/2, j.getY()+Jugador.alto-h, w, h);
+        lblPuntaje.setText("Puntaje: " + game.getPuntaje());
+        
+        ArrayList<ContenidoBloque> bloques = game.getBloques();
+        for(int i=0; i<bloques.size();i++)
+        {
+            ContenidoBloque b = bloques.get(i);
+            lblBloques[i].setBounds(b.getX(),b.getY(),ContenidoBloque.ancho,ContenidoBloque.alto);
+            
+            if(b.isBloqueColocado())
+            {
+                lblBloques[i].setBackground(new Color(39, 174, 96));
+            }
+            else
+            {
+                lblBloques[i].setBackground(colorDe(b.getTipoBloque()));
+            }
+        }
+        
+    }
+    
+    public void mostrarMensaje(String mensaje)
+    {
+        lblMensaje.setText(mensaje);
+    }
+    
+    public Color colorDe(Bloque tipo)
+    {
+        switch(tipo)
+        {
+            case bloqueIf:
+                return new Color(41,128,185);
+            case bloqueIfElse:
+                return new Color(230,126,34);
+            default:
+                return new Color(142,68,173);
+        }
+    }
+}

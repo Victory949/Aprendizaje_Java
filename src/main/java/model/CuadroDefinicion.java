@@ -12,8 +12,8 @@ import java.awt.Rectangle;
  */
 public class CuadroDefinicion {
     //variables
-    private int ancho=200;
-    private int alto=70;
+    public static int ancho=200;
+    public static int alto=70;
     
     private Bloque tipoBloque;
     private int x,y;
