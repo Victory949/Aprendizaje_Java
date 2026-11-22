@@ -11,4 +11,11 @@
         <exec.mainClass>main.Principal</exec.mainClass>
     </properties>
     <name>AprendizajeJava</name>
+    <dependencies>
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>RELEASE300</version>
+        </dependency>
+    </dependencies>
 </project>

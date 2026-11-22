@@ -10,7 +10,7 @@ package model;
  */
 public enum Bloque {
     bloqueIf("if","ejecuta código solo si la condición es verdadera"),
-    bloqueIffElse("if else","elige entre dos caminos según la condición"),
+    bloqueIfElse("if else","elige entre dos caminos según la condición"),
     bloqueSwitch("switch","compara una variable y determina el camino dependiendo del caso");
     
     //VARIABLES

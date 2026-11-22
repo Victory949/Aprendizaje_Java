@@ -12,14 +12,22 @@ import java.awt.Rectangle;
  */
 public class ContenidoBloque {
     //variables
-    private int ancho=90;
-    private int alto=30;
+    public static int ancho=90;
+    public static int alto=30;
     
     private Bloque tipoBloque;
     private int xInicial,yInicial;
     private int x,y;
     private boolean bloqueCargado,bloqueColocado;
 
+    public ContenidoBloque(Bloque tipoBloque, int x, int y) {
+        this.tipoBloque = tipoBloque;
+        this.xInicial = x;
+        this.yInicial = y;
+        this.x = x;
+        this.y = y;
+    }
+    
     public Bloque getTipoBloque()
     {
         return tipoBloque;
