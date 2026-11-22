@@ -47,6 +47,7 @@ public class Juego {
         plataformas.add(new Rectangle(520, 430, 150,14));
         plataformas.add(new Rectangle(720, 350, 150,14));
         plataformas.add(new Rectangle(520, 270, 150,14));
+        plataformas.add(new Rectangle(300, 190, 150,14));
         
         zonas.clear();
         zonas.add(new CuadroDefinicion(Bloque.bloqueIf,20,450));
@@ -60,6 +61,7 @@ public class Juego {
         bloques.add(new ContenidoBloque(Bloque.bloqueIfElse,250,490));
         bloques.add(new ContenidoBloque(Bloque.bloqueSwitch,110,400));
         bloques.add(new ContenidoBloque(Bloque.bloqueSwitch,550,400));
+        
     }
     
     public void reiniciar()
@@ -138,6 +140,33 @@ public class Juego {
                     break;
                 }
             }
+            
+            //ESTADO DE LA ANIMACION
+            player.setTicksAnimacion(player.getTicksAnimacion()+1);
+            
+            if(player.isEnSuelo())
+            {
+                player.setSaltosUsados(0);
+                player.setAcrobatico(false);
+                player.setTicksEnAire(0);
+            }
+            else
+            {
+                if(newEnSuelo && player.getSaltosUsados()==0)
+                {
+                    player.setSaltosUsados(1);
+                    player.setTicksEnAire(24);
+                }
+                player.setTicksEnAire(player.getTicksEnAire()+1);
+            }
+            
+            //BLOQUE CARGADO
+            ContenidoBloque cargado = player.getBloqueCargado();
+            if(cargado!=null)
+            {
+                cargado.setPosicion(player.getX()+(Jugador.ancho-ContenidoBloque.ancho)/2, player.getY()+ContenidoBloque.alto-14);
+            }
+
         }
     }
     

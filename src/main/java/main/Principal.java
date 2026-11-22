@@ -4,6 +4,8 @@
 
 package main;
 
+import controller.ControladorJuegoPlataformas;
+
 /**
  *
  * @author aaron
@@ -12,6 +14,8 @@ public class Principal
 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        ControladorJuegoPlataformas c = new ControladorJuegoPlataformas();
+        
+        c.iniciar();
     }
 }

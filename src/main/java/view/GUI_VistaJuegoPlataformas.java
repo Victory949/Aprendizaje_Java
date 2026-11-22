@@ -67,15 +67,15 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
         lblIndicaciones = new javax.swing.JLabel();
         lblPersonaje = new javax.swing.JLabel();
         lblSuelo = new javax.swing.JLabel();
-        lblZonaIf = new javax.swing.JLabel();
-        lblZonaIfElse = new javax.swing.JLabel();
-        lblZonaSwitch = new javax.swing.JLabel();
         lblBloqueIf1 = new javax.swing.JLabel();
         lblBloqueIf2 = new javax.swing.JLabel();
         lblBloqueIfElse1 = new javax.swing.JLabel();
         lblBloqueIfElse2 = new javax.swing.JLabel();
         lblBloqueSwitch1 = new javax.swing.JLabel();
         lblBloqueSwitch2 = new javax.swing.JLabel();
+        lblZonaIf = new javax.swing.JLabel();
+        lblZonaIfElse = new javax.swing.JLabel();
+        lblZonaSwitch = new javax.swing.JLabel();
         lblPlataforma1 = new javax.swing.JLabel();
         lblPlataforma2 = new javax.swing.JLabel();
         lblPlataforma3 = new javax.swing.JLabel();
@@ -88,46 +88,26 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
 
         pnlBack.setBackground(new java.awt.Color(102, 204, 255));
         pnlBack.setPreferredSize(new java.awt.Dimension(900, 560));
-        pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlBack.setLayout(null);
 
         lblPuntaje.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
         lblPuntaje.setText("Puntaje: 0");
-        pnlBack.add(lblPuntaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 101, 35));
+        pnlBack.add(lblPuntaje);
+        lblPuntaje.setBounds(10, 10, 200, 35);
 
         lblIndicaciones.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         lblIndicaciones.setText("← → o A D: mover   |   ↑ W o Espacio: saltar (dos veces = acrobacia)   |   S o  ↓ : agacharse   |   E: recoger / colocar   |   R: reiniciar");
-        pnlBack.add(lblIndicaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 835, 37));
+        pnlBack.add(lblIndicaciones);
+        lblIndicaciones.setBounds(20, 30, 835, 37);
 
         lblPersonaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/quieto_diseno.png"))); // NOI18N
-        pnlBack.add(lblPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, -1));
+        pnlBack.add(lblPersonaje);
+        lblPersonaje.setBounds(20, 480, 39, 43);
 
         lblSuelo.setBackground(new java.awt.Color(69, 0, 6));
         lblSuelo.setOpaque(true);
-        pnlBack.add(lblSuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 527, 963, 33));
-
-        lblZonaIf.setBackground(new java.awt.Color(255, 255, 255));
-        lblZonaIf.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 10)); // NOI18N
-        lblZonaIf.setText("Se ejecuta solamente si la condición es veradera");
-        lblZonaIf.setToolTipText("");
-        lblZonaIf.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 1, 2, new java.awt.Color(204, 0, 0)));
-        lblZonaIf.setOpaque(true);
-        pnlBack.add(lblZonaIf, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 250, 70));
-
-        lblZonaIfElse.setBackground(new java.awt.Color(255, 255, 255));
-        lblZonaIfElse.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 10)); // NOI18N
-        lblZonaIfElse.setText("Elige dos caminos depende de la condición");
-        lblZonaIfElse.setToolTipText("");
-        lblZonaIfElse.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 1, 2, new java.awt.Color(204, 0, 0)));
-        lblZonaIfElse.setOpaque(true);
-        pnlBack.add(lblZonaIfElse, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 460, 220, 70));
-
-        lblZonaSwitch.setBackground(new java.awt.Color(255, 255, 255));
-        lblZonaSwitch.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 10)); // NOI18N
-        lblZonaSwitch.setText("Compara una variables con difentes casos");
-        lblZonaSwitch.setToolTipText("");
-        lblZonaSwitch.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 1, 2, new java.awt.Color(204, 0, 0)));
-        lblZonaSwitch.setOpaque(true);
-        pnlBack.add(lblZonaSwitch, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 460, 220, 70));
+        pnlBack.add(lblSuelo);
+        lblSuelo.setBounds(0, 527, 963, 33);
 
         lblBloqueIf1.setBackground(new java.awt.Color(255, 204, 0));
         lblBloqueIf1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
@@ -136,7 +116,8 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
         lblBloqueIf1.setText("IF");
         lblBloqueIf1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         lblBloqueIf1.setOpaque(true);
-        pnlBack.add(lblBloqueIf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 83, 35));
+        pnlBack.add(lblBloqueIf1);
+        lblBloqueIf1.setBounds(130, 280, 83, 35);
 
         lblBloqueIf2.setBackground(new java.awt.Color(255, 204, 0));
         lblBloqueIf2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
@@ -145,7 +126,8 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
         lblBloqueIf2.setText("IF");
         lblBloqueIf2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         lblBloqueIf2.setOpaque(true);
-        pnlBack.add(lblBloqueIf2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 180, 83, 35));
+        pnlBack.add(lblBloqueIf2);
+        lblBloqueIf2.setBounds(750, 180, 83, 35);
 
         lblBloqueIfElse1.setBackground(new java.awt.Color(204, 0, 102));
         lblBloqueIfElse1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
@@ -154,7 +136,8 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
         lblBloqueIfElse1.setText("IF-ELSE");
         lblBloqueIfElse1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         lblBloqueIfElse1.setOpaque(true);
-        pnlBack.add(lblBloqueIfElse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, 83, 35));
+        pnlBack.add(lblBloqueIfElse1);
+        lblBloqueIfElse1.setBounds(290, 400, 83, 35);
 
         lblBloqueIfElse2.setBackground(new java.awt.Color(204, 0, 102));
         lblBloqueIfElse2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
@@ -163,7 +146,8 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
         lblBloqueIfElse2.setText("IF-ELSE");
         lblBloqueIfElse2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         lblBloqueIfElse2.setOpaque(true);
-        pnlBack.add(lblBloqueIfElse2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 400, 83, 35));
+        pnlBack.add(lblBloqueIfElse2);
+        lblBloqueIfElse2.setBounds(760, 400, 83, 35);
 
         lblBloqueSwitch1.setBackground(new java.awt.Color(0, 102, 102));
         lblBloqueSwitch1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
@@ -172,7 +156,8 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
         lblBloqueSwitch1.setText("SWITCH");
         lblBloqueSwitch1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         lblBloqueSwitch1.setOpaque(true);
-        pnlBack.add(lblBloqueSwitch1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, 83, 35));
+        pnlBack.add(lblBloqueSwitch1);
+        lblBloqueSwitch1.setBounds(440, 320, 83, 35);
 
         lblBloqueSwitch2.setBackground(new java.awt.Color(0, 102, 102));
         lblBloqueSwitch2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
@@ -181,34 +166,69 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
         lblBloqueSwitch2.setText("SWITCH");
         lblBloqueSwitch2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         lblBloqueSwitch2.setOpaque(true);
-        pnlBack.add(lblBloqueSwitch2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 83, 35));
+        pnlBack.add(lblBloqueSwitch2);
+        lblBloqueSwitch2.setBounds(410, 100, 83, 35);
+
+        lblZonaIf.setBackground(new java.awt.Color(255, 255, 255));
+        lblZonaIf.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 8)); // NOI18N
+        lblZonaIf.setText("Se ejecuta solamente si la condición es veradera");
+        lblZonaIf.setToolTipText("");
+        lblZonaIf.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 1, 2, new java.awt.Color(204, 0, 0)));
+        lblZonaIf.setOpaque(true);
+        pnlBack.add(lblZonaIf);
+        lblZonaIf.setBounds(90, 460, 250, 70);
+
+        lblZonaIfElse.setBackground(new java.awt.Color(255, 255, 255));
+        lblZonaIfElse.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 8)); // NOI18N
+        lblZonaIfElse.setText("Elige dos caminos depende de la condición");
+        lblZonaIfElse.setToolTipText("");
+        lblZonaIfElse.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 1, 2, new java.awt.Color(204, 0, 0)));
+        lblZonaIfElse.setOpaque(true);
+        pnlBack.add(lblZonaIfElse);
+        lblZonaIfElse.setBounds(633, 460, 220, 70);
+
+        lblZonaSwitch.setBackground(new java.awt.Color(255, 255, 255));
+        lblZonaSwitch.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 8)); // NOI18N
+        lblZonaSwitch.setText("Compara una variables con difentes casos");
+        lblZonaSwitch.setToolTipText("");
+        lblZonaSwitch.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 1, 2, new java.awt.Color(204, 0, 0)));
+        lblZonaSwitch.setOpaque(true);
+        pnlBack.add(lblZonaSwitch);
+        lblZonaSwitch.setBounds(390, 460, 220, 70);
 
         lblPlataforma1.setBackground(new java.awt.Color(102, 51, 0));
         lblPlataforma1.setOpaque(true);
-        pnlBack.add(lblPlataforma1, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 430, 147, 18));
+        pnlBack.add(lblPlataforma1);
+        lblPlataforma1.setBounds(267, 430, 147, 18);
 
         lblPlataforma2.setBackground(new java.awt.Color(102, 51, 0));
         lblPlataforma2.setOpaque(true);
-        pnlBack.add(lblPlataforma2, new org.netbeans.lib.awtextra.AbsoluteConstraints(715, 214, 147, 18));
+        pnlBack.add(lblPlataforma2);
+        lblPlataforma2.setBounds(715, 214, 147, 18);
 
         lblPlataforma3.setBackground(new java.awt.Color(102, 51, 0));
         lblPlataforma3.setOpaque(true);
-        pnlBack.add(lblPlataforma3, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 315, 147, 18));
+        pnlBack.add(lblPlataforma3);
+        lblPlataforma3.setBounds(109, 315, 147, 18);
 
         lblPlataforma4.setBackground(new java.awt.Color(102, 51, 0));
         lblPlataforma4.setOpaque(true);
-        pnlBack.add(lblPlataforma4, new org.netbeans.lib.awtextra.AbsoluteConstraints(727, 430, 147, 18));
+        pnlBack.add(lblPlataforma4);
+        lblPlataforma4.setBounds(727, 430, 147, 18);
 
         lblPlataforma5.setBackground(new java.awt.Color(102, 51, 0));
         lblPlataforma5.setOpaque(true);
-        pnlBack.add(lblPlataforma5, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 356, 147, 18));
+        pnlBack.add(lblPlataforma5);
+        lblPlataforma5.setBounds(399, 356, 147, 18);
 
         lblPlataforma6.setBackground(new java.awt.Color(102, 51, 0));
         lblPlataforma6.setOpaque(true);
-        pnlBack.add(lblPlataforma6, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 131, 147, 18));
+        pnlBack.add(lblPlataforma6);
+        lblPlataforma6.setBounds(399, 131, 147, 18);
 
         lblMensaje.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        pnlBack.add(lblMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 440, 30));
+        pnlBack.add(lblMensaje);
+        lblMensaje.setBounds(260, 10, 440, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -286,7 +306,7 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
         
         for(int i=0; i<n;i++)
         {
-            String ruta = String.format("/images/%s%02d.png", prefijo, desde+1);
+            String ruta = String.format("/images/%s%02d.png", prefijo, desde+i);
             
             try
             {
@@ -297,7 +317,7 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
                 BufferedImage derecha = new BufferedImage(w,h, BufferedImage.TYPE_INT_ARGB);
                 derecha.getGraphics().drawImage(reducida, 0, 0, null);
                 
-                AffineTransform espejo = AffineTransform.getScaleInstance(-1, -1);
+                AffineTransform espejo = AffineTransform.getScaleInstance(-1, 1);
                 espejo.translate(-w, 0);
                 
                 BufferedImage izquierda = new AffineTransformOp(espejo,AffineTransformOp.TYPE_BILINEAR).filter(derecha,null);
@@ -325,7 +345,7 @@ public class GUI_VistaJuegoPlataformas extends javax.swing.JFrame {
             return a[lado][frame];
         }
         
-        if(!j.isAgachado())
+        if(j.isAgachado())
         {
             int frame = j.getVelocidadX()!=0 ? (t/6) % agachado[lado].length:0;
             return agachado[lado][frame];
