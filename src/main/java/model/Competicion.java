@@ -45,16 +45,15 @@ public class Competicion {
     public void cargarRetos()
     {
         //IF
-        r.add(new Reto(Bloque.bloqueIf,"","",new String[]{}));
-        
+        r.add(new Reto(Bloque.bloqueIf,"Digita un if que imprima \"Mayor de edad\" únicamente cuando la variable sea mayor o igual a 18.","if (edad>=){\n   System.out.println(\"Mayor de edad\");\n} ", new String[]{"if", "edad>=18","System.out.println","Mayor de edad"}));
         r.add(new Reto(Bloque.bloqueIf,"","",new String[]{}));
         
         //IF-ELSE
-        r.add(new Reto(Bloque.bloqueIfElse,"","",new String[]{}));
+        r.add(new Reto(Bloque.bloqueIfElse,"Digite un if-else que imprima \"Aprobado\" si la nota es mayor o igual a 70, y \"Reprobado\" caso contrario.","if (nota>=70){\nSystem.out.println(\"Aprobado\");\n} else{\nSystem.out.println(\"Reprobado\");\n}", new String[]{"if", "nota>=70","Aprobado","else","Reprobado"}));
         r.add(new Reto(Bloque.bloqueIfElse,"","",new String[]{}));
         
         //SWITCH
-        r.add(new Reto(Bloque.bloqueSwitch,"","",new String[]{}));
+        r.add(new Reto(Bloque.bloqueSwitch,"Digite un switch que tenga opciones para imprimir \"Iniciar\" si vale 1, \"Salir\" si vale 2, y \"No válido\" si no es ninguno de los dos. Use la variable int opcion.", "switch(opcion){\ncase 1:\nSystem.out.println(\"Iniciar\");\nbreak;\ncase 2:\nSystem.out.println(\"Salir\");\nbreak;\ndefault:\nSystem.out.println(\"No válido\");\n}", new String[]{"switch","opcion","break", "case 1","Iniciar", "case 2","Salir","default","No válido"}));
         r.add(new Reto(Bloque.bloqueSwitch,"","",new String[]{}));
     }
     
