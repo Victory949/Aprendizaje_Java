@@ -35,7 +35,7 @@ public class Reto implements Evaluable{
 
     public String limpiar(String txt)
     {
-        return txt.replace(" ", " ").replace("\n", "");
+        return txt.replace(" ", "").replace("\n", "");
     }
     
     @Override

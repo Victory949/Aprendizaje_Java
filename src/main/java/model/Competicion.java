@@ -61,7 +61,7 @@ public class Competicion {
     {
         ArrayList<Reto> retoModo = new ArrayList<>();
         
-        for(int i=0; i<retoModo.size();i++)
+        for(int i=0; i<r.size();i++)
         {
             if(r.get(i).getModo()==modo)
             {

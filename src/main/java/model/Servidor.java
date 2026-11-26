@@ -73,4 +73,14 @@ public class Servidor extends Thread{
         }
     }
     
+    public void cerrar()
+    {
+        try{
+            server.close();
+        }
+        catch(IOException e)
+        {
+            System.out.println("Error al cerrar el servidor: "+e.getMessage());
+        }
+    }
 }
